@@ -1,6 +1,8 @@
 import { Component, OnInit,Input } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
+//FUTURO: import { NovosComponent } from '../novos/novos.component';
+
 
 @Component({
   selector: 'app-janela-modal-classificar',
@@ -41,7 +43,7 @@ clearInterval(this.SetInterval_avanco_certificados_automatico);
   }
 
   private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
+    if (reason === ModalDismissReasons.ESC) {      
       return 'by pressing ESC';
     } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
       return 'by clicking on a backdrop';

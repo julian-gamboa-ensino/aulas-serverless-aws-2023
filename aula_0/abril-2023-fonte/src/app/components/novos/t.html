@@ -46,7 +46,9 @@ Certificados obtidos até o ano 2023<br>
           <img id="imagem-1" src="{{imagem[indice_imagen]}}"
           class="card-img-top" alt="Image 1" style="height: 225px; width: 100%; display: block;" 
            >
-           {{indice_imagen}}
+           
+           imagem[indice_imagen]:
+           {{imagem[indice_imagen]}}
 <app-janela-modal-classificar  SetInterval_avanco_certificados_automatico={{SetInterval_avanco_certificados_automaticoBIDIRECTIONAL}} SetInterval_avanco_certificados_automatico={{SetInterval_avanco_certificados_automaticoBIDIRECTIONAL}}
 nome_imagem="{{imagem[indice_imagen]}}"
 etiqueta_imagem="{{etiqueta}}" >  
@@ -130,11 +132,56 @@ etiqueta_imagem="{{etiqueta}}" >
 <!--END: COL. ------>      
 </div>  
 <!--END: ROW. ------>
-</div>
 
+
+
+<!--ROW. Inicio---------> 
+<div class="row">
+<!--Elemento da Matriz---------> 
+<div class="col-md-4">
+<div class="card mb-4 box-shadow">
+<!--Image--------->          
+          <img id="imagem-7" src="{{imagem[indice_imagen+6]}}"
+          class="card-img-top" alt="Image 7" style="height: 225px; width: 100%; display: block;" 
+          >
+          <app-janela-modal-classificar  SetInterval_avanco_certificados_automatico={{SetInterval_avanco_certificados_automaticoBIDIRECTIONAL}}
+          nome_imagem="{{imagem[indice_imagen+6]}}"
+          etiqueta_imagem="{{etiqueta}}" >  
+          </app-janela-modal-classificar>
+        </div>
 </div>
-<!-------------------------------------------------------------------------->
-<!-------------------------------------------------------------------------->
+<!--COL. ------>           
+<div class="col-md-4">
+<div class="card mb-4 box-shadow">
+<!--Image--------->          
+          <img id="imagem-8" src="{{imagem[indice_imagen+7]}}"
+          class="card-img-top" alt="Image 8" style="height: 225px; width: 100%; display: block;" 
+          >
+          <app-janela-modal-classificar  SetInterval_avanco_certificados_automatico={{SetInterval_avanco_certificados_automaticoBIDIRECTIONAL}}
+          nome_imagem="{{imagem[indice_imagen+7]}}"
+          etiqueta_imagem="{{etiqueta}}" >  
+          </app-janela-modal-classificar>
+        </div>
+</div>
+<!--END: COL. ------>      
+<!--COL. ------>           
+<div class="col-md-4">
+<div class="card mb-4 box-shadow">
+<!--Image--------->          
+  <img id="imagem-9" src="{{imagem[indice_imagen+8]}}"
+  class="card-img-top" alt="Image 9" style="height: 225px; width: 100%; display: block;" 
+  >
+  <app-janela-modal-classificar  SetInterval_avanco_certificados_automatico={{SetInterval_avanco_certificados_automaticoBIDIRECTIONAL}}
+  nome_imagem="{{imagem[indice_imagen+8]}}"
+  etiqueta_imagem="{{etiqueta}}" >  
+  </app-janela-modal-classificar>
+</div>
+</div>
+<!--END: COL. ------>      
+</div>  
+<!--END: ROW. ------>
+</div>
+</div>
 </main>
 
   <footer class="text-muted">

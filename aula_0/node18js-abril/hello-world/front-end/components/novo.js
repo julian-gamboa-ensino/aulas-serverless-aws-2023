@@ -1,4 +1,31 @@
+var indiceImagen=0;
 
+export default {
+  
+  created() {
+    setInterval(() => {
+      //console.log("element.in       ")
+      this.indiceImagen++;
+   }, 3*1000)
+},
+  
+  data() {
+
+    let imagem;
+    const source=      
+    "https://ssd-2023-240gb----youtube.s3.us-west-2.amazonaws.com/ssd-2023-240gb.json"
+    fetch(source)
+    .then(response => response.json())
+    .then(data => this.imagem = data)
+    
+
+    return { 
+      indiceImagen : indiceImagen , //Math.floor(Math.random()*10000),
+      imagem: {},
+     }
+  },
+  template: 
+`
 <!--Header do Boostrap--------->
 <header>
     <div class="bg-dark collapse" id="navbarHeader" >
@@ -33,6 +60,7 @@ Certificados obtidos até o ano 2023<br>
       </div>
     </div>
 </header>
+
 <!--END Header do Boostrap--------->          
 <main role="main">
 <div class="album py-5 bg-light">
@@ -43,12 +71,13 @@ Certificados obtidos até o ano 2023<br>
 <div class="col-md-4">
 <div class="card mb-4 box-shadow">
 <!--Image--------->          
-          <img id="imagem-1" src="{{imagem[indice_imagen]}}"
+          <img id="imagem-1" v-bind:src="imagem[indiceImagen]"
           class="card-img-top" alt="Image 1" style="height: 225px; width: 100%; display: block;" 
            >
-           {{indice_imagen}}
+           
+
 <app-janela-modal-classificar  SetInterval_avanco_certificados_automatico={{SetInterval_avanco_certificados_automaticoBIDIRECTIONAL}} SetInterval_avanco_certificados_automatico={{SetInterval_avanco_certificados_automaticoBIDIRECTIONAL}}
-nome_imagem="{{imagem[indice_imagen]}}"
+nome_imagem="{{imagem[indiceImagen]}}"
 etiqueta_imagem="{{etiqueta}}" >  
 </app-janela-modal-classificar>
 </div>
@@ -57,11 +86,11 @@ etiqueta_imagem="{{etiqueta}}" >
 <div class="col-md-4">
 <div class="card mb-4 box-shadow">
 <!--Image--------->          
-          <img id="imagem-2" src="{{imagem[indice_imagen+1]}}"
+          <img id="imagem-2" v-bind:src="imagem[indiceImagen+1]"
           class="card-img-top" alt="Image 2" style="height: 225px; width: 100%; display: block;" 
           >
 <app-janela-modal-classificar  SetInterval_avanco_certificados_automatico={{SetInterval_avanco_certificados_automaticoBIDIRECTIONAL}}
-          nome_imagem="{{imagem[indice_imagen+1]}}"
+          nome_imagem="{{imagem[indiceImagen+1]}}"
           etiqueta_imagem="{{etiqueta}}" >  
           </app-janela-modal-classificar>
         </div>
@@ -71,11 +100,11 @@ etiqueta_imagem="{{etiqueta}}" >
 <div class="col-md-4">
 <div class="card mb-4 box-shadow">
 <!--Image--------->          
-  <img id="imagem-3" src="{{imagem[indice_imagen+2]}}"
+  <img id="imagem-3" v-bind:src="imagem[indiceImagen+2]"
   class="card-img-top" alt="Image 3" style="height: 225px; width: 100%; display: block;" 
   >
   <app-janela-modal-classificar  SetInterval_avanco_certificados_automatico={{SetInterval_avanco_certificados_automaticoBIDIRECTIONAL}}  
-  nome_imagem="{{imagem[indice_imagen+2]}}"
+  nome_imagem="{{imagem[indiceImagen+2]}}"
   etiqueta_imagem="{{etiqueta}}" >  
   </app-janela-modal-classificar>
 </div>
@@ -91,11 +120,11 @@ etiqueta_imagem="{{etiqueta}}" >
 <div class="col-md-4">
 <div class="card mb-4 box-shadow">
 <!--Image--------->          
-          <img id="imagem-4" src="{{imagem[indice_imagen+3]}}"
+          <img id="imagem-4" v-bind:src="imagem[indiceImagen+3]"
           class="card-img-top" alt="Image 4" style="height: 225px; width: 100%; display: block;" 
           >
           <app-janela-modal-classificar  SetInterval_avanco_certificados_automatico={{SetInterval_avanco_certificados_automaticoBIDIRECTIONAL}}
-          nome_imagem="{{imagem[indice_imagen+3]}}"
+          nome_imagem="{{imagem[indiceImagen+3]}}"
           etiqueta_imagem="{{etiqueta}}" >  
           </app-janela-modal-classificar>
                 </div>
@@ -104,11 +133,11 @@ etiqueta_imagem="{{etiqueta}}" >
 <div class="col-md-4">
 <div class="card mb-4 box-shadow">
 <!--Image--------->          
-          <img id="imagem-5" src="{{imagem[indice_imagen+4]}}"
+          <img id="imagem-5" v-bind:src="imagem[indiceImagen+4]"
           class="card-img-top" alt="Image 5" style="height: 225px; width: 100%; display: block;" 
           >
           <app-janela-modal-classificar  SetInterval_avanco_certificados_automatico={{SetInterval_avanco_certificados_automaticoBIDIRECTIONAL}}
-          nome_imagem="{{imagem[indice_imagen+4]}}"
+          nome_imagem="{{imagem[indiceImagen+4]}}"
           etiqueta_imagem="{{etiqueta}}" >  
           </app-janela-modal-classificar>
         </div>
@@ -118,11 +147,59 @@ etiqueta_imagem="{{etiqueta}}" >
 <div class="col-md-4">
 <div class="card mb-4 box-shadow">
 <!--Image--------->          
-  <img id="imagem-6" src="{{imagem[indice_imagen+5]}}"
+  <img id="imagem-6" v-bind:src="imagem[indiceImagen+5]"
   class="card-img-top" alt="Image 6" style="height: 225px; width: 100%; display: block;" 
   >
   <app-janela-modal-classificar  SetInterval_avanco_certificados_automatico={{SetInterval_avanco_certificados_automaticoBIDIRECTIONAL}}
-  nome_imagem="{{imagem[indice_imagen+5]}}"
+  nome_imagem="{{imagem[indiceImagen+5]}}"
+  etiqueta_imagem="{{etiqueta}}" >  
+  </app-janela-modal-classificar>
+</div>
+</div>
+<!--END: COL. ------>      
+</div>  
+<!--END: ROW. ------>
+
+
+
+<!--ROW. Inicio---------> 
+<div class="row">
+<!--Elemento da Matriz---------> 
+<div class="col-md-4">
+<div class="card mb-4 box-shadow">
+<!--Image--------->          
+          <img id="imagem-7" v-bind:src="imagem[indiceImagen+6]"
+          class="card-img-top" alt="Image 7" style="height: 225px; width: 100%; display: block;" 
+          >
+          <app-janela-modal-classificar  SetInterval_avanco_certificados_automatico={{SetInterval_avanco_certificados_automaticoBIDIRECTIONAL}}
+          nome_imagem="{{imagem[indiceImagen+6]}}"
+          etiqueta_imagem="{{etiqueta}}" >  
+          </app-janela-modal-classificar>
+        </div>
+</div>
+<!--COL. ------>           
+<div class="col-md-4">
+<div class="card mb-4 box-shadow">
+<!--Image--------->          
+          <img id="imagem-8" v-bind:src="imagem[indiceImagen+7]"
+          class="card-img-top" alt="Image 8" style="height: 225px; width: 100%; display: block;" 
+          >
+          <app-janela-modal-classificar  SetInterval_avanco_certificados_automatico={{SetInterval_avanco_certificados_automaticoBIDIRECTIONAL}}
+          nome_imagem="{{imagem[indiceImagen+7]}}"
+          etiqueta_imagem="{{etiqueta}}" >  
+          </app-janela-modal-classificar>
+        </div>
+</div>
+<!--END: COL. ------>      
+<!--COL. ------>           
+<div class="col-md-4">
+<div class="card mb-4 box-shadow">
+<!--Image--------->          
+  <img id="imagem-9" v-bind:src="imagem[indiceImagen+8]"
+  class="card-img-top" alt="Image 9" style="height: 225px; width: 100%; display: block;" 
+  >
+  <app-janela-modal-classificar  SetInterval_avanco_certificados_automatico={{SetInterval_avanco_certificados_automaticoBIDIRECTIONAL}}
+  nome_imagem="{{imagem[indiceImagen+8]}}"
   etiqueta_imagem="{{etiqueta}}" >  
   </app-janela-modal-classificar>
 </div>
@@ -131,10 +208,7 @@ etiqueta_imagem="{{etiqueta}}" >
 </div>  
 <!--END: ROW. ------>
 </div>
-
 </div>
-<!-------------------------------------------------------------------------->
-<!-------------------------------------------------------------------------->
 </main>
 
   <footer class="text-muted">
@@ -143,3 +217,19 @@ etiqueta_imagem="{{etiqueta}}" >
       <p>Colocado no meu <a href="https://github.com/julian-gamboa-ensino/julian-gamboa-ensino.github.io/tree/aws-lambda-sam-cli/abril-2023-fonte">Github de ensino</a> </p>                        
     </div>
   </footer>
+
+
+
+  `
+}
+
+/*
+
+<div id="app">
+      <button @click="getPosts">{{  indiceImagen }}</button>
+      <br>
+      <a v-bind:href="post[indiceImagen]" target="_blank">{{post[indiceImagen]}}</a>           
+  </div>
+
+
+*/ 

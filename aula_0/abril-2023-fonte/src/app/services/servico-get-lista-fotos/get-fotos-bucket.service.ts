@@ -19,11 +19,11 @@ Serviço SIMPLES para consultar uma API que lista-se as fotos contidas num bucke
 export class GetFotosBucketService {
 
   url = 
-  //"https://cv-julian-2022.s3.us-west-2.amazonaws.com/conteudo_pasta/";
-  //"https://pj4uh68hs7.execute-api.us-east-2.amazonaws.com/Prod/lista";
-  //"http://localhost:8080/lista";
-  //"http://localhost:3000/Prod/novas";
-  "https://pu576rnnb0.execute-api.us-east-1.amazonaws.com/Prod/novas";
+  //"https://xwqdjkcspnl7uxmbvzfrbqufuy0hjurr.lambda-url.us-east-1.on.aws/novas";
+  //"https://76rctlqvbtkps2bfnhqbbrmive0rzxrp.lambda-url.us-east-1.on.aws/novas";
+  "https://xwqdjkcspnl7uxmbvzfrbqufuy0hjurr.lambda-url.us-east-1.on.aws/novas";
+  //"http://127.0.0.1:3001/novas";
+  
   
 
 // injetando o HttpClient

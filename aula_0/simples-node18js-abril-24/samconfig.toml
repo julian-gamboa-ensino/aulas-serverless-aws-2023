@@ -17,11 +17,11 @@ lint = true
 capabilities = "CAPABILITY_IAM"
 confirm_changeset = true
 resolve_s3 = true
-s3_prefix = "abril24"
+s3_prefix = "simples-node18-abril-24"
 region = "us-east-1"
 disable_rollback = true
 image_repositories = []
-stack_name = "abril24"
+stack_name = "simples-node18-abril-24"
 
 [default.package.parameters]
 resolve_s3 = true

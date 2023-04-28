@@ -68,7 +68,7 @@ ngOnInit() {
     this.avanco_certificados_automatico(this.indice_imagen);
 }
 
-avanco_certificados_automatico(entrada:number)
+public  avanco_certificados_automatico(entrada:number)
 {
   
   this.SetInterval_avanco_certificados_automaticoBIDIRECTIONAL = setInterval(() => { this.avanco_certificados(entrada); }, 3*1000); 
